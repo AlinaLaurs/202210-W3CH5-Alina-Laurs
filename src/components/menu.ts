@@ -37,3 +37,11 @@ export class Menu extends Component implements IComponent {
         this.renderOuter(this.selector, this.template);
     }
 }
+
+/* <nav class="nav">
+                <ul class="nav__menu">
+                    <a class="nav__favorites" href="./favorites.html"
+                        >Mis Pokémons favoritos</a
+                    >
+                </ul>
+            </nav> */

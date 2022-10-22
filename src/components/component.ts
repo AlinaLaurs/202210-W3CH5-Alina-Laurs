@@ -23,8 +23,6 @@ export abstract class Component {
         return true;
     }
 }
-
-//Esto no deberia guardarse en este archivo
 export interface IComponent {
     createTemplate: () => string;
     manageComponent: () => void;

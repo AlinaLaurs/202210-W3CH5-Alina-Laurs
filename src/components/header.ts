@@ -7,14 +7,14 @@ export class Header extends Component {
         super();
         this.template = this.createTemplate();
         this.renderAdd(this.selector, this.template);
-        new Menu('header>slot');
+        //new Menu('header>slot');
     }
     createTemplate() {
-        return `
-         <header>
-            <h1>TODO List</h1>
-            <slot></slot>
-        </header>
-        `;
+        return `<header class="header">
+            <div class="header__div">
+                <h1>Pokémons</h1>
+                <img class="header__logo" src="../assets/pokemon-logo.svg" alt="Pokemon logo"/>
+            <div>
+        </header>`;
     }
 }
