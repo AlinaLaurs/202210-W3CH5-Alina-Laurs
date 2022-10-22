@@ -47,7 +47,6 @@ export class PokemonList extends Component {
         });
         this.template += `</li>
             </section>`;
-
         return this.template;
     }
 }
