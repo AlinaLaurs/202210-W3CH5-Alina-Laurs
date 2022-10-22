@@ -7,7 +7,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { Task } from '../models/task.js';
+import { Task } from '../models/pokemon.js';
 import { Store } from '../services/storage.js';
 import { TaskApi } from '../services/task.api.js';
 import { AddTask } from './add.task.js';

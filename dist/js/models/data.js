@@ -1,4 +1,4 @@
-import { Task } from './task.js';
+import { Task } from './pokemon.js';
 export const TASKS = [
     new Task('Estudiar', 'Ernesto'),
     // {title: 'Dormir', responsible: 'Pepe', isComplete: false}

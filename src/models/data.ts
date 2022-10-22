@@ -1,4 +1,4 @@
-import { Task } from './task.js';
+import { Task } from './pokemon.js';
 
 export const TASKS: Array<Task> = [
     new Task('Estudiar', 'Ernesto'),

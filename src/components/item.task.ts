@@ -1,4 +1,4 @@
-import { Task } from '../models/task.js';
+import { Task } from '../models/pokemon.js';
 import { Component } from './component.js';
 
 export class ItemTask extends Component {

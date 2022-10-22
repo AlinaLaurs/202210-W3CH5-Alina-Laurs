@@ -1,5 +1,5 @@
 import { TASKS } from '../models/data.js';
-import { Task } from '../models/task.js';
+import { Task } from '../models/pokemon.js';
 import { Store } from '../services/storage.js';
 import { TaskApi } from '../services/task.api.js';
 import { AddTask } from './add.task.js';
