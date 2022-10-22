@@ -11,9 +11,13 @@ export class Menu extends Component {
         this.manageComponent();
     }
     createTemplate() {
+        //Inicio de la lista
         let template = '<nav><ul>';
-        this.menuOptions.forEach((item) => (template += `<li><a href="${item.path}">${item.label} </a></li>
-            `));
+        //Iteramos el array y por cada vuelta construimos la lista
+        this.menuOptions.forEach((item) => (template += `
+        <li><a href="${item.path}">${item.label}</a></li>
+        `));
+        //Final de la lista
         template += '</ul></nav>';
         return template;
     }

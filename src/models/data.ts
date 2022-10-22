@@ -6,5 +6,3 @@ export const TASKS: Array<Task> = [
     new Task('Dormir', 'Pepe'),
     new Task('Ir al parque', 'Elena'),
 ];
-
-TASKS[0].isComplete = true;

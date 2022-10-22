@@ -1,4 +1,4 @@
-import { Component, IComponent } from './component.js';
+import { Component } from './component.js';
 
 export class Base extends Component implements IComponent {
     template!: string;
@@ -9,11 +9,17 @@ export class Base extends Component implements IComponent {
 
     manageComponent() {
         this.template = this.createTemplate();
-        this.render(this.selector, this.template);
+        this.renderAdd(this.selector, this.template);
     }
 
     createTemplate() {
-        return `
-        `;
+        return ``;
     }
 }
+
+export interface IComponent {
+    createTemplate: () => string;
+    manageComponent: () => void;
+}
+
+// Plantilla para crear componentes

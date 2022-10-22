@@ -1,5 +1,5 @@
 import { Component } from './component.js';
-import styles from './footer.module.css' assert { type: 'css' };
+//import styles from './footer.module.css';
 
 export class Footer extends Component {
     template: string;
@@ -7,11 +7,11 @@ export class Footer extends Component {
         super();
         this.template = this.createTemplate();
         this.renderAdd(this.selector, this.template);
-        console.log(styles);
     }
     createTemplate() {
+        //<footer class="${styles.footer}">
         return `
-         <footer class="${styles.footer}"
+        <footer>
             <address>ISDI COders</address>
         </footer>
         `;

@@ -7,17 +7,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+import { Task } from '../models/task.js';
 import { Store } from '../services/storage.js';
 import { TaskApi } from '../services/task.api.js';
 import { AddTask } from './add.task.js';
 import { Component } from './component.js';
-import { ItemTask } from './item,task.js';
+import { ItemTask } from './item.task.js';
 export class TaskList extends Component {
     constructor(selector) {
         super();
         this.selector = selector;
         this.api = new TaskApi();
-        this.storeService = new Store('Tasks');
+        this.storeService = new Store();
         this.tasks = [];
         // if (this.storeService.getStore().length === 0) {
         //     this.tasks = [...TASKS];
@@ -25,13 +26,14 @@ export class TaskList extends Component {
         // } else {
         //     this.tasks = this.storeService.getStore();
         // }
-        this.startTasks();
-        // Sin async / await
+        // SIN ASYNC AWAIT
         // this.api.getTask().then((data) => {
         //     this.tasks = data;
         //     this.manageComponent();
         // });
+        this.startTasks();
     }
+    // CON ASYNC AWAIT
     startTasks() {
         return __awaiter(this, void 0, void 0, function* () {
             this.tasks = yield this.api.getTask();
@@ -59,33 +61,18 @@ export class TaskList extends Component {
         const title = document.querySelector('#title')
             .value;
         const responsible = document.querySelector('#resp').value;
-        // const newTask = new Task(title, responsible)
-        const newTask = {
-            title,
-            responsible,
-            isComplete: false,
-        };
-        this.api.createTask(newTask).then((task) => {
-            this.tasks.push(task);
-            // this.storeService.setStore(this.tasks);
-            this.manageComponent();
-        });
+        this.tasks.push(new Task(title, responsible));
+        this.storeService.setStore(this.tasks);
+        this.manageComponent();
     }
-    handlerEraser(deletedID) {
-        this.api.deleteTask(deletedID).then((response) => {
-            if (response.ok) {
-                this.tasks = this.tasks.filter((item) => item.id !== deletedID);
-                // this.storeService.setStore(this.tasks);
-                this.manageComponent();
-            }
-        });
+    handlerEraser(deletedId) {
+        this.tasks = this.tasks.filter((item) => item.id !== deletedId);
+        this.storeService.setStore(this.tasks);
+        this.manageComponent();
     }
-    handlerComplete(changeID) {
-        const i = this.tasks.findIndex((item) => item.id === changeID);
-        const newState = !this.tasks[i].isComplete;
-        this.api.updateTask(changeID, { isComplete: newState }).then((task) => {
-            this.tasks[i].isComplete = task.isComplete;
-        });
-        // this.storeService.setStore(this.tasks);
+    handlerComplete(changeId) {
+        const i = this.tasks.findIndex((item) => item.id === changeId);
+        this.tasks[i].isComplete = !this.tasks[i].isComplete;
+        this.storeService.setStore(this.tasks);
     }
 }

@@ -1,10 +1,10 @@
 import { TASKS } from '../models/data.js';
-import { ITask, Task } from '../models/task.js';
+import { Task } from '../models/task.js';
 import { Store } from '../services/storage.js';
 import { TaskApi } from '../services/task.api.js';
 import { AddTask } from './add.task.js';
 import { Component } from './component.js';
-import { ItemTask } from './item,task.js';
+import { ItemTask } from './item.task.js';
 
 export class TaskList extends Component {
     template!: string;
@@ -14,7 +14,7 @@ export class TaskList extends Component {
     constructor(public selector: string) {
         super();
         this.api = new TaskApi();
-        this.storeService = new Store('Tasks');
+        this.storeService = new Store<Task>();
         this.tasks = [];
         // if (this.storeService.getStore().length === 0) {
         //     this.tasks = [...TASKS];
@@ -23,15 +23,15 @@ export class TaskList extends Component {
         //     this.tasks = this.storeService.getStore();
         // }
 
-        this.startTasks();
-
-        // Sin async / await
+        // SIN ASYNC AWAIT
         // this.api.getTask().then((data) => {
         //     this.tasks = data;
         //     this.manageComponent();
         // });
+        this.startTasks();
     }
 
+    // CON ASYNC AWAIT
     async startTasks() {
         this.tasks = await this.api.getTask();
         this.manageComponent();
@@ -67,35 +67,20 @@ export class TaskList extends Component {
         const responsible = (
             document.querySelector('#resp') as HTMLInputElement
         ).value;
-        // const newTask = new Task(title, responsible)
-        const newTask: ITask = {
-            title,
-            responsible,
-            isComplete: false,
-        };
-        this.api.createTask(newTask).then((task) => {
-            this.tasks.push(task);
-            // this.storeService.setStore(this.tasks);
-            this.manageComponent();
-        });
+        this.tasks.push(new Task(title, responsible));
+        this.storeService.setStore(this.tasks);
+        this.manageComponent();
     }
 
-    handlerEraser(deletedID: number) {
-        this.api.deleteTask(deletedID).then((response) => {
-            if (response.ok) {
-                this.tasks = this.tasks.filter((item) => item.id !== deletedID);
-                // this.storeService.setStore(this.tasks);
-                this.manageComponent();
-            }
-        });
+    handlerEraser(deletedId: number) {
+        this.tasks = this.tasks.filter((item) => item.id !== deletedId);
+        this.storeService.setStore(this.tasks);
+        this.manageComponent();
     }
 
-    handlerComplete(changeID: number) {
-        const i = this.tasks.findIndex((item) => item.id === changeID);
-        const newState = !this.tasks[i].isComplete;
-        this.api.updateTask(changeID, { isComplete: newState }).then((task) => {
-            this.tasks[i].isComplete = task.isComplete;
-        });
-        // this.storeService.setStore(this.tasks);
+    handlerComplete(changeId: number) {
+        const i = this.tasks.findIndex((item) => item.id === changeId);
+        this.tasks[i].isComplete = !this.tasks[i].isComplete;
+        this.storeService.setStore(this.tasks);
     }
 }

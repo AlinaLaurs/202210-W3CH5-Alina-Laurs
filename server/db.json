@@ -7,18 +7,18 @@
         },
         {
             "id": 2,
-            "title": "bla, bla, bla",
-            "author": "pepe"
+            "title": "lala",
+            "author": "Pepe"
         }
     ],
     "users": [
         {
             "id": 1,
-            "name": "pepe",
+            "name": "Pepe",
             "age": 33
         },
         {
-            "name": "Luisa",
+            "name": "Ernesto",
             "age": 43,
             "id": 2
         }
@@ -79,20 +79,19 @@
         {
             "title": "Estudiar",
             "responsible": "Ernesto",
-            "id": 1,
+            "id": 160493,
             "isComplete": false
         },
         {
             "title": "Dormir",
             "responsible": "Pepe",
-            "id": 2,
-            "isComplete": true
+            "id: 98921, isComplete": false
         },
         {
-            "title": "Hacer Pokemones",
-            "responsible": "Todos",
-            "isComplete": false,
-            "id": 3
+            "title": "Ir al parque",
+            "responsible": "Elena",
+            "id": 442210,
+            "isComplete": false
         }
     ]
 }
