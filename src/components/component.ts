@@ -14,6 +14,7 @@ export abstract class Component {
         element.innerHTML += template;
         return true;
     }
+
     renderOuter(selector: string, template: string) {
         if (!selector) return false;
         const element = document.querySelector(selector);
@@ -22,7 +23,6 @@ export abstract class Component {
         return true;
     }
 }
-
 export interface IComponent {
     createTemplate: () => string;
     manageComponent: () => void;

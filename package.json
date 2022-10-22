@@ -1,7 +1,7 @@
 {
-    "name": "week3 todo",
+    "name": "Pokémon",
     "version": "1.0.0",
-    "description": "",
+    "description": "Week 3 - Challenge WeekEnd",
     "main": "index.js",
     "type": "module",
     "scripts": {
@@ -12,7 +12,7 @@
         "server": "json-server --watch ./server/db.json"
     },
     "keywords": [],
-    "author": "",
+    "author": "Alina Laurs",
     "license": "ISC",
     "prettier": {
         "singleQuote": true
