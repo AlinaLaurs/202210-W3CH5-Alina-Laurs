@@ -1,5 +1,5 @@
 import { Component } from './component.js';
-export class Footer extends Component {
+export class Buttons extends Component {
     constructor(selector) {
         super();
         this.selector = selector;
@@ -8,8 +8,9 @@ export class Footer extends Component {
     }
     createTemplate() {
         return `
-        <footer>
-            <address>Alina Laurs</address>
-        </footer>`;
+        <div class="main__buttons">
+            <a href=${this.pokemons.previous} class="main__buttonPrevious">Previous</a>
+            <a href=${this.pokemons.next} class="main__buttonNext">Next</a>
+        </div>`;
     }
 }

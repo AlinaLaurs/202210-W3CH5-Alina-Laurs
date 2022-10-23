@@ -4,8 +4,8 @@ import { Main } from './components/main.js';
 import { PokemonList } from './components/pokemon.list.js';
 import { Footer } from './components/footer.js';
 
-new Menu('body');
 new Header('body');
+new Menu('body');
 new Main('body');
 new PokemonList('main');
 new Footer('body');

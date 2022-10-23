@@ -10,7 +10,7 @@ export class Footer extends Component {
     createTemplate() {
         return `
         <footer>
-            <address>Made by Alina Laurs</address>
+            <address>Alina Laurs</address>
         </footer>`;
     }
 }

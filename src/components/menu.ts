@@ -12,6 +12,7 @@ export class Menu extends Component implements IComponent {
         super();
         this.menuOptions = [
             { path: '', label: 'Principal' },
+            { path: '', label: 'Ficha Pokémon' },
             { path: '', label: 'Mis Pokémons' },
         ];
         this.manageComponent();
@@ -28,6 +29,6 @@ export class Menu extends Component implements IComponent {
     }
     manageComponent() {
         this.template = this.createTemplate();
-        this.renderOuter(this.selector, this.template);
+        this.renderAdd(this.selector, this.template);
     }
 }
