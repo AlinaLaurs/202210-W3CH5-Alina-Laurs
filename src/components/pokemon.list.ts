@@ -61,8 +61,8 @@ export class PokemonList extends Component {
         this.template += `</ul>
             </section>
             <div class="main__buttons">
-                <a href="#" id="main__buttonPrevious">Previous</a>
-                <a href="#" id="main__buttonNext">Next</a>
+                <a href="#" class="main__buttonPrevious" id="main__buttonPrevious">Previous</a>
+                <a href="#" class="main__buttonNext" id="main__buttonNext">Next</a>
             </div>
             `;
         return this.template;
