@@ -4,7 +4,7 @@ export class PokemonApi {
     // Es la que va a interactuar con el servidor
     url: string;
     constructor() {
-        this.url = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0';
+        this.url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
     }
 
     getPokemon(): Promise<Array<IPokemon>> {

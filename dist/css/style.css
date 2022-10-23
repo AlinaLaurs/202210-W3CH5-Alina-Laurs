@@ -1,17 +1,92 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-.main__pokemon {
-    width: 20%;
+body {
+    color: white;
+    background-color: black;
 }
 
+header,
 .main__section {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.main__list {
+    display: grid;
+    grid-template-columns: repeat(10, auto);
 }
 
 .main__card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.main__pokemon {
+    width: 75%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem;
+}
+
+.main__card:hover {
+    background-color: violet;
+    box-shadow: 0 0 0rem 2rem violet;
 }
 
 .main__name {
+    position: absolute;
+    font-size: 1rem;
+}
+
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 5rem;
+}
+
+.header__h1 {
+    visibility: hidden;
+    font-size: 0;
+}
+
+header {
+    margin-bottom: 5rem;
+}
+
+.header__nav {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-block: 3rem;
+}
+
+.header__menu {
+    display: flex;
+    justify-content: baseline;
+}
+
+.header__page {
+    margin: 1rem;
+}
+
+.header__element {
+    text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.header__element:hover {
+    background-color: violet;
+    color: white;
+    box-shadow: 0 0 0rem 1rem violet;
 }

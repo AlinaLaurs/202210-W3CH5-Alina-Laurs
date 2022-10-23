@@ -4,21 +4,16 @@ export class Menu extends Component {
         super();
         this.selector = selector;
         this.menuOptions = [
-            { path: '', label: 'Inicio' },
-            { path: '', label: 'Tareas' },
-            { path: '', label: 'Nosotros' },
+            { path: '', label: 'Principal' },
+            { path: '', label: 'Mis Pokémons' },
         ];
         this.manageComponent();
     }
     createTemplate() {
-        //Inicio de la lista
-        let template = '<nav><ul>';
-        //Iteramos el array y por cada vuelta construimos la lista
-        this.menuOptions.forEach((item) => (template += `
-        <li><a href="${item.path}">${item.label}</a></li>
+        let template = `<nav class="header__nav"><ul class="header__menu">`;
+        this.menuOptions.forEach((item) => (template += `<ul class="header__page"><a class="header__element" href="${item.path}">${item.label}</a></ul>
         `));
-        //Final de la lista
-        template += '</ul></nav>';
+        template += `</ul></nav>`;
         return template;
     }
     manageComponent() {
@@ -26,10 +21,3 @@ export class Menu extends Component {
         this.renderOuter(this.selector, this.template);
     }
 }
-/* <nav class="nav">
-                <ul class="nav__menu">
-                    <a class="nav__favorites" href="./favorites.html"
-                        >Mis Pokémons favoritos</a
-                    >
-                </ul>
-            </nav> */
