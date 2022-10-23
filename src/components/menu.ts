@@ -11,21 +11,19 @@ export class Menu extends Component implements IComponent {
     constructor(public selector: string) {
         super();
         this.menuOptions = [
-            { path: '', label: 'Inicio' },
-            { path: '', label: 'Tareas' },
-            { path: '', label: 'Nosotros' },
+            { path: '', label: 'Principal' },
+            { path: '', label: 'Mis Pokémons' },
         ];
         this.manageComponent();
     }
     createTemplate() {
-        let template = '<nav><ul>';
+        let template = `<nav class="header__nav"><ul class="header__menu">`;
         this.menuOptions.forEach(
             (item: menuOptionI) =>
-                (template += `
-        <li><a href="${item.path}">${item.label}</a></li>
+                (template += `<ul class="header__page"><a class="header__element" href="${item.path}">${item.label}</a></ul>
         `)
         );
-        template += '</ul></nav>';
+        template += `</ul></nav>`;
         return template;
     }
     manageComponent() {
@@ -33,11 +31,3 @@ export class Menu extends Component implements IComponent {
         this.renderOuter(this.selector, this.template);
     }
 }
-
-/* <nav class="nav">
-                <ul class="nav__menu">
-                    <a class="nav__favorites" href="./favorites.html"
-                        >Mis Pokémons favoritos</a
-                    >
-                </ul>
-            </nav> */

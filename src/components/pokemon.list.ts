@@ -41,11 +41,11 @@ export class PokemonList extends Component {
 
     createTemplate() {
         this.template = `<section class="main__section">
-                <li>`;
+                <ul class="main__list">`;
         this.pokemonsDetails.forEach((item: any) => {
             this.template += new ItemPokemon('', item).template;
         });
-        this.template += `</li>
+        this.template += `</ul>
             </section>`;
         return this.template;
     }
