@@ -33,8 +33,19 @@ export class PokemonList extends Component {
         });
     }
     manageComponent() {
+        var _a, _b;
         this.template = this.createTemplate();
         this.render(this.selector, this.template);
+        (_a = document
+            .getElementById('main__buttonNext')) === null || _a === void 0 ? void 0 : _a.addEventListener('click', () => {
+            this.api.url = this.pokemons.next;
+            this.startPokemons();
+        });
+        (_b = document
+            .getElementById('main__buttonPrevious')) === null || _b === void 0 ? void 0 : _b.addEventListener('click', () => {
+            this.api.url = this.pokemons.previous;
+            this.startPokemons();
+        });
     }
     createTemplate() {
         this.template = `<section class="main__section">
@@ -43,7 +54,12 @@ export class PokemonList extends Component {
             this.template += new ItemPokemon('', item).template;
         });
         this.template += `</ul>
-            </section>`;
+            </section>
+            <div class="main__buttons">
+                <a href="#" class="main__buttonPrevious" id="main__buttonPrevious">Previous</a>
+                <a href="#" class="main__buttonNext" id="main__buttonNext">Next</a>
+            </div>
+            `;
         return this.template;
     }
 }

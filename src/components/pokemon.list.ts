@@ -8,6 +8,7 @@ export class PokemonList extends Component {
     pokemons: any;
     pokemonsDetails: any;
     api: PokemonApi;
+
     constructor(public selector: string) {
         super();
         this.api = new PokemonApi();
@@ -15,7 +16,6 @@ export class PokemonList extends Component {
         this.pokemonsDetails = [];
         this.startPokemons();
     }
-
     // El await no asigna a pokemons hasta que la información no llegue del servidor.
     async startPokemons() {
         this.pokemons = await this.api.getPokemon();
@@ -31,12 +31,25 @@ export class PokemonList extends Component {
                 fetch(url).then((response) => response.json())
             )
         );
+
         this.manageComponent();
     }
 
     manageComponent() {
         this.template = this.createTemplate();
         this.render(this.selector, this.template);
+        document
+            .getElementById('main__buttonNext')
+            ?.addEventListener('click', () => {
+                this.api.url = this.pokemons.next;
+                this.startPokemons();
+            });
+        document
+            .getElementById('main__buttonPrevious')
+            ?.addEventListener('click', () => {
+                this.api.url = this.pokemons.previous;
+                this.startPokemons();
+            });
     }
 
     createTemplate() {
@@ -46,7 +59,12 @@ export class PokemonList extends Component {
             this.template += new ItemPokemon('', item).template;
         });
         this.template += `</ul>
-            </section>`;
+            </section>
+            <div class="main__buttons">
+                <a href="#" class="main__buttonPrevious" id="main__buttonPrevious">Previous</a>
+                <a href="#" class="main__buttonNext" id="main__buttonNext">Next</a>
+            </div>
+            `;
         return this.template;
     }
 }

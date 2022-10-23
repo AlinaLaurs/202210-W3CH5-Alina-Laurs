@@ -5,6 +5,7 @@ export class Menu extends Component {
         this.selector = selector;
         this.menuOptions = [
             { path: '', label: 'Principal' },
+            { path: '', label: 'Ficha Pokémon' },
             { path: '', label: 'Mis Pokémons' },
         ];
         this.manageComponent();
@@ -18,6 +19,6 @@ export class Menu extends Component {
     }
     manageComponent() {
         this.template = this.createTemplate();
-        this.renderOuter(this.selector, this.template);
+        this.renderAdd(this.selector, this.template);
     }
 }

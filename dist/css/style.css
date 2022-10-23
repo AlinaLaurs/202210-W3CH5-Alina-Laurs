@@ -15,8 +15,12 @@ header,
     position: relative;
     display: flex;
     justify-content: center;
+    margin-top: 4rem;
 }
 
+header {
+    margin-bottom: 4rem;
+}
 .main__list {
     display: grid;
     grid-template-columns: repeat(10, auto);
@@ -29,14 +33,6 @@ header,
     margin: 2rem;
 }
 
-.main__pokemon {
-    width: 75%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 1.5rem;
-}
-
 .main__card:hover {
     background-color: violet;
     box-shadow: 0 0 0rem 2rem violet;
@@ -47,11 +43,45 @@ header,
     font-size: 1rem;
 }
 
+.main__pokemon {
+    width: 75%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+.main__buttonPrevious {
+    width: 75%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.main__buttonPrevious:hover {
+    background-color: violet;
+    border: none;
+}
+
+.main__buttonNext {
+    width: 75%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.main__buttonNext:hover {
+    background-color: violet;
+    border: none;
+}
+
 footer {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-top: 5rem;
+    margin-top: 4rem;
 }
 
 .header__h1 {
@@ -59,15 +89,16 @@ footer {
     font-size: 0;
 }
 
-header {
-    margin-bottom: 5rem;
-}
-
 .header__nav {
     position: relative;
     display: flex;
     justify-content: center;
-    margin-block: 3rem;
+}
+
+.main__buttons {
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .header__menu {
@@ -76,7 +107,15 @@ header {
 }
 
 .header__page {
-    margin: 1rem;
+    border: 1px solid white;
+    padding: 1rem 5rem;
+    margin-inline: 1rem;
+}
+
+.header__page:hover {
+    border: none;
+    padding: 1rem 5rem;
+    background-color: violet;
 }
 
 .header__element {
@@ -85,8 +124,18 @@ header {
     color: white;
 }
 
-.header__element:hover {
-    background-color: violet;
+.main__buttonPrevious {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
-    box-shadow: 0 0 0rem 1rem violet;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+.main__buttonNext {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    border: 1px solid white;
+    padding: 1rem;
 }

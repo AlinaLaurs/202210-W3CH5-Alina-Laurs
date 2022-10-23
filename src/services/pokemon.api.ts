@@ -2,7 +2,7 @@ import { IPokemon } from '../models/pokemon.js';
 
 export class PokemonApi {
     // Es la que va a interactuar con el servidor
-    url: string;
+    public url: string;
     constructor() {
         this.url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
     }
