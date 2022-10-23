@@ -16,8 +16,12 @@ export class ItemPokemon extends Component {
 
     createTemplate() {
         return `<div class="main__card">
-            <img class="main__pokemon" src="${this.item.sprites.other.dream_world.front_default}" alt="${this.item.species.name}"/>
-            <h2 class="main__name">${this.item.name}</h2>
+            <img class="main__pokemon" src="${
+                this.item.sprites.other.dream_world.front_default
+            }" alt="${this.item.species.name}"/>
+            <h2 class="main__name">${this.item.name
+                .charAt(0)
+                .toUpperCase()}${this.item.name.slice(1)}</h2>
         </div>`;
     }
 }
