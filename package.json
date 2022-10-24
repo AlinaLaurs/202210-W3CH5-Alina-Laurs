@@ -7,7 +7,7 @@
     "scripts": {
         "start:ts": "ts-node-esm index.ts",
         "start": "node ./dist/index.js",
-        "build": "tsc --watch",
+        "build1": "tsc --watch",
         "test": "jest --watchAll --coverage",
         "server": "json-server --watch ./server/db.json"
     },
