@@ -5,7 +5,7 @@ export class Menu extends Component {
         this.selector = selector;
         this.menuOptions = [
             { path: '', label: 'Principal' },
-            { path: '', label: 'Mis Pokémons' },
+            { path: '', label: 'Mis Pokemons' },
         ];
         this.manageComponent();
     }
