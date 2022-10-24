@@ -12,7 +12,6 @@ export class Menu extends Component implements IComponent {
         super();
         this.menuOptions = [
             { path: '', label: 'Principal' },
-            { path: '', label: 'Ficha Pokémon' },
             { path: '', label: 'Mis Pokémons' },
         ];
         this.manageComponent();
